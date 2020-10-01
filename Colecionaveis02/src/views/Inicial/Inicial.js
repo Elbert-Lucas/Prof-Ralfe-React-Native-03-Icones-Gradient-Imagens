@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import estiloInicial from './estiloInicial';
+import { useIsDrawerOpen } from '@react-navigation/drawer';
+import { SimpleLineIcons } from '@expo/vector-icons';
 
 function Inicial({ navigation }) {
+
+    const isDrawerOpen = useIsDrawerOpen();
+    const exibirDrawer = () =>{
+        if(!isDrawerOpen){
+            navigation.openDrawer();
+        }
+    }
 
     const abrirColecao = () => {
         navigation.navigate('Colecao')
@@ -14,19 +23,29 @@ function Inicial({ navigation }) {
     
     return (
         <View style={estiloInicial.container}>
-            <View style={estiloInicial.borda}>
+            <View style={estiloInicial.header}>
+                <TouchableOpacity onPress={exibirDrawer}>
+                <SimpleLineIcons name="options-vertical" size={26} color="white" />
+                </TouchableOpacity>
+            </View>
 
-                <Text style={estiloInicial.texto}>Inicial</Text>
+            <ImageBackground source={require('../../../assets/imagens/darkSky.jpg')} style={estiloInicial.fundo}>
+
 
                 <TouchableOpacity style={estiloInicial.botaoContainer} onPress={abrirColecao}>
+                  <ImageBackground source={require('../../../assets/imagens/colecao.jpg')} style={estiloInicial.botaoBackground}>
                     <Text style={estiloInicial.botaoTexto}>Coleção</Text>
+                  </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={estiloInicial.botaoContainer} onPress={abrirItem}>
+                  <ImageBackground source={require('../../../assets/imagens/itens.jpg')} style={estiloInicial.botaoBackground}>
                     <Text style={estiloInicial.botaoTexto}>Item</Text>
+                  </ImageBackground>
                 </TouchableOpacity>
 
-            </View>
+            
+            </ImageBackground>
         </View>
     )
 }

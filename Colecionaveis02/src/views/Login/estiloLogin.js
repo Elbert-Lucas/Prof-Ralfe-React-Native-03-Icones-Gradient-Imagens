@@ -1,6 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 const estiloLogin = StyleSheet.create({
+    fundo:{
+        justifyContent:'center',
+        width: '100%',
+        height: '100%'
+    },
+
    container: {   
       flex: 1,
       justifyContent: 'center',
@@ -8,10 +14,17 @@ const estiloLogin = StyleSheet.create({
    },
    borda: {   
       backgroundColor: '#081a31',  
-      width: '80%',
+      width: '80%', 
+       marginLeft: '10%',
+      marginRight: '10%',
       height: 230,
       borderRadius: 10,
    },
+   logoContainer:{
+       alignItems: 'center',
+       marginBottom: 15,
+   },
+
    texto: {
       fontSize: 20,
       color: '#FFFFFF',
@@ -19,32 +32,39 @@ const estiloLogin = StyleSheet.create({
       textAlign: "center",
       padding: 10
    },
-   campo: {
-      backgroundColor: '#dcedff',
-      fontSize: 18,
-      marginLeft: 40,
-      marginRight: 40,    
-      marginTop: 5,
-      borderRadius: 5,
-      height: 40,
-      paddingLeft: 10
+    campoContainer:{
+       flexDirection: 'row',
+       padding: 10,
+       paddingLeft: 10,
+       paddingRight: 50,
+       margin: 10,
+       borderRadius: 5,
+       borderColor: 'white'
     },
-   botaoContainer: {
-      marginTop: 20,
-      marginBottom: 20,
-      marginLeft: 40,
-      marginRight: 40,
-      borderRadius: 5,
-      height: 40,
-      borderWidth: 2,
-      borderColor: '#e8f2e9',
-      backgroundColor: '#14417b',
-      justifyContent: 'center',
-      alignItems: 'center',
+   campo: {
+      fontSize: 18,
+      color: 'gray',
+      marginLeft: 15,
+      paddingBottom: 10,
+      borderBottomWidth: 1,
+      borderColor: 'white'
+    },
+   botaoLinearGradient:{
+       flexDirection: 'row',
+       justifyContent: "center",
+       alignItems: 'center',
+       margin: 20,
+       marginLeft: 50,
+       marginRight: 50,
+       height: 50,
+       paddingLeft: 15,
+       paddingRight: 15,
+       borderRadius: 8 
    },
       botaoTexto: {
       fontSize: 18,
       color: '#FFFFFF',
+      marginLeft: 5,
       fontWeight: 'bold'
    },
 });
